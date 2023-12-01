@@ -63,7 +63,6 @@ describe('UserBoard Component', () => {
   it('renders UserBoard component in list view with search', () => {
     (useSelector as jest.Mock).mockReturnValueOnce('list');
     (useSelector as jest.Mock).mockReturnValueOnce('John');
-    (useSelector as jest.Mock).mockReturnValueOnce(usersData);
 
     render(<UserBoard usersData={usersData} />);
 
