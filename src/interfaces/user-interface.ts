@@ -4,7 +4,7 @@ export interface Geo {
 }
 
 export interface Address {
-  street: string;
+  street?: string;
   suite: string;
   city: string;
   zipcode: string;
