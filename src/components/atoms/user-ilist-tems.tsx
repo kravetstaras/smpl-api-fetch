@@ -3,8 +3,10 @@ import { User } from '../../interfaces/user-interface';
 
 export default function UserListItem({
   userData,
+  index,
 }: {
   userData: User;
+  index: number;
 }): JSX.Element {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -23,8 +25,9 @@ export default function UserListItem({
   };
 
   return (
-    <div className="mb-4 p-4 bg-white w-full">
+    <div className="p-4 bg-white w-full border-b-[2px] border-b-blue-300">
       <div className="cursor-pointer" onClick={handleToggleDetails}>
+        <strong className="mr-[10px]">{index}.</strong>
         <strong>{name}</strong>
       </div>
       {showDetails && (

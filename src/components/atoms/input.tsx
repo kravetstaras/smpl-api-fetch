@@ -1,17 +1,27 @@
+import { ChangeEvent } from 'react';
+import cn from 'classnames';
+
 export default function Input({
-  icon,
   label,
-  onClick,
   className,
-  type = 'button',
-  active,
+  value,
+  onChange,
 }: {
-  icon?: string;
   label?: string;
-  onClick: () => void;
   className?: string;
-  type?: 'button' | 'submit';
-  active?: boolean;
+  value?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }): JSX.Element {
-  return <input></input>;
+  return (
+    <input
+      name="search-user"
+      placeholder={label}
+      onChange={onChange}
+      value={value}
+      className={cn(
+        'border-[2px] border-blue-300 rounded-[26px] px-[20px] bg-white',
+        className,
+      )}
+    />
+  );
 }

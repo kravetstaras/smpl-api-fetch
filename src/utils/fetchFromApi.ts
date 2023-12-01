@@ -11,11 +11,8 @@ export default async function fetchFromApi() {
       },
     );
 
-    console.log(response);
-
     if (response.status === 200) {
       const result = response.data;
-      console.log(result);
       return result;
     } else {
       console.error(`Request failed with status code ${response.status}`);

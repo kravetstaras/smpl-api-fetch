@@ -1,4 +1,5 @@
 export interface RootState {
   view: 'list' | 'grid';
-  loading: 'boolean';
+  loading: boolean;
+  search: string;
 }
