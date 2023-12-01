@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import fetchFromApi from './utils/fetchFromApi';
 import { User } from './interfaces/user-interface';
 
-import UserBoard from './components/users-board';
+import UserBoard from './components/organisms/users-board';
+import Header from './components/molecules/header';
 
 function App() {
   const [data, setData] = useState<User[] | null>(null);
@@ -16,7 +17,12 @@ function App() {
     fetchData();
   }, []);
 
-  return <div className="">{data && <UserBoard usersData={data} />}</div>;
+  return (
+    <>
+      <Header />
+      {data && <UserBoard usersData={data} />}
+    </>
+  );
 }
 
 export default App;
